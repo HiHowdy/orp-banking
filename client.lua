@@ -46,7 +46,7 @@ Citizen.CreateThread(function()
 end)
 
 RegisterCommand('atm', function(source, args) -- Command to access ATM when players are near instead of spam notifications when near an ATM
-    if playerNearATM() then
+    if playerNearATM() or playerNearBank() then
         openPlayersBank('atm')
         local ped = GetPlayerPed(-1)
     else
